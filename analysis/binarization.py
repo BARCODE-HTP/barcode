@@ -45,6 +45,8 @@ def find_largest_void(frame: np.ndarray):
 
 def find_island_properties(frame: np.ndarray, bin_config: BinarizationConfig):
     def get_nearest_neighbors(islands: list[tuple], k:float):
+        if len(islands) <= 1:
+            return 0
         k_num = int(np.ceil(k * len(islands)) - 1)
         points = np.array(islands, dtype = np.dtype([('x', 'float'), ('y', 'float')]))
         a, b = points.reshape(len(islands), 1), points.reshape(1, len(islands))
