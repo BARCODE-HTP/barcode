@@ -196,6 +196,7 @@ def save_preview_video(preview_config: VisualizationConfigGUI | PreviewConfigGUI
         downsample = barcode_config.optical_flow_parameters.downsample.get()
         um_pixel_ratio = barcode_config.reader.um_pixel_ratio.get()
         row, cols = 1, 1
+        limits = None
         if rds_type == "Image_Binarization":
             figsize = (5 * frames[0].shape[1]/frames[0].shape[0], 5)
         elif rds_type == "Optical_Flow":
